@@ -50,8 +50,8 @@ export class CoursesService {
     );
     const course = await this.courseRepository.preload({
       ...updateCourseDTO,
-      tags,
       id,
+      tags,
     });
 
     if (!course) {

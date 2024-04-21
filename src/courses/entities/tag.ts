@@ -17,10 +17,10 @@ export class Tag {
   name: string;
 
   @CreateDateColumn()
-  created_at: Date;
+  createdAt: Date;
 
   @UpdateDateColumn()
-  updated_at: Date;
+  updatedAt: Date;
 
   @ManyToMany(() => Course, (course) => course.tags)
   courses: Course[];

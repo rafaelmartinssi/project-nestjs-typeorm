@@ -21,10 +21,10 @@ export class Course {
   description: string;
 
   @CreateDateColumn()
-  created_at: Date;
+  createdAt: Date;
 
   @UpdateDateColumn()
-  updated_at: Date;
+  updatedAt: Date;
 
   @JoinTable()
   @ManyToMany(() => Tag, (tag) => tag.courses, {
