@@ -1,9 +1,11 @@
 import {
   Column,
+  CreateDateColumn,
   Entity,
   JoinTable,
   ManyToMany,
   PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 import { Tag } from './tag';
 
@@ -17,6 +19,12 @@ export class Course {
 
   @Column()
   description: string;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
 
   @JoinTable()
   @ManyToMany(() => Tag, (tag) => tag.courses, {
