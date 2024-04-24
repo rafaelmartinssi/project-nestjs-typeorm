@@ -8,12 +8,12 @@ import { Tag } from './entities/tag';
 
 @Injectable()
 export class CoursesService {
-  constructor(
-    @InjectRepository(Course)
-    private courseRepository: Repository<Course>,
-    @InjectRepository(Tag)
-    private tagRepository: Repository<Tag>,
-  ) {}
+  @InjectRepository(Course)
+  private courseRepository: Repository<Course>;
+  @InjectRepository(Tag)
+  private tagRepository: Repository<Tag>;
+
+  constructor() {}
 
   async findAll() {
     return this.courseRepository.find({
